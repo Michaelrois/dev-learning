@@ -11,3 +11,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.authenticatorContainer {
+  width: 30%;
+  margin: 0 auto;
+  margin-top: 3.5rem;
+  padding-bottom: 1.5rem;
+}
