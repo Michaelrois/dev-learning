@@ -1,0 +1,19 @@
+{
+  "dev_learning": "Development learning",
+  "auth_footer": "All Rights Reserved 2024",
+  "sign_in_header": "Sign in to your account",
+  "reset_password": "Reset Password",
+  "create_account": "Create a new account",
+  "back_to_sign_in": "Back to Sign In",
+  "information": "Enter Information:",
+  "footer_information": "Footer Information",
+  "sign_in_username": "Username:",
+  "sign_in_placeholder": "Enter your email",
+  "sign_up_password": "Password:",
+  "sign_up_placeholder": "Enter your password",
+  "confirm_password": "Confirm Password:",
+  "confirmation_code": "Confirmation Code:",
+  "confirmation_code_placeholder": "Enter your Confirmation Code",
+  "test_issuer": "Test Issuer",
+  "totp_username": "amplifyt_qr_test_user"
+}

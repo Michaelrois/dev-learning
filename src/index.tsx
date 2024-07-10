@@ -4,8 +4,10 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import {Amplify} from 'aws-amplify';
 import awsExports from './aws-exports';
-import styled from "styled-components";
+import styled from 'styled-components';
+import {useTranslation, Trans} from 'react-i18next';
 import '@aws-amplify/ui-react/styles.css';
+import {Suspense} from 'react';
 import MainScreen from './screens/MainScreen';
 import {
     Authenticator,
@@ -17,25 +19,21 @@ import {
     Image,
     Text,
     Button,
-    useAuthenticator
+    useAuthenticator,
 } from '@aws-amplify/ui-react';
-import {
-    createBrowserRouter,
-    RouterProvider,
-} from "react-router-dom";
+import {createBrowserRouter, RouterProvider} from 'react-router-dom';
+import './i18n';
 
 Amplify.configure(awsExports);
-
 // Define your routes
 const router = createBrowserRouter([
     {
-        path: "/",
+        path: '/',
         element: <MainScreen/>,
     },
-
 ]);
 
-//Styled Components
+// Styled Components
 const AuthenticatorTitle = styled.h1`
     color: #943288;
     text-shadow: 0 3px 2px darkblue;
@@ -44,31 +42,27 @@ const AuthenticatorTitle = styled.h1`
 // Define your custom components
 const components = {
     Header() {
-        const { tokens } = useTheme();
+        const {tokens} = useTheme();
+        const {t} = useTranslation();
 
         return (
             <View textAlign="center" padding={tokens.space.large}>
-                <Image
-                    alt="Amplify logo"
-                    src="https://docs.amplify.aws/assets/logo-dark.svg"
-                />
-                <AuthenticatorTitle>DEVELOPMENT LEARNING</AuthenticatorTitle>
+                <Image alt="Amplify logo" src="https://docs.amplify.aws/assets/logo-dark.svg"/>
+                <AuthenticatorTitle>
+                    {t('dev_learning')}
+                </AuthenticatorTitle>
             </View>
         );
     },
 
     Footer() {
-        const { tokens } = useTheme();
+        const {tokens} = useTheme();
+        const {t} = useTranslation();
 
         return (
             <View textAlign="center" padding={tokens.space.large}>
-                <Text
-                    color='#943288'
-                    fontSize='12px'
-                    fontWeight='bolder'
-                    fontStyle="italic"
-                >
-                    Michael Sirois &copy; All Rights Reserved 2024
+                <Text color="#943288" fontSize="12px" fontWeight="bolder" fontStyle="italic">
+                    Michael Sirois &copy; {t('auth_footer')}
                 </Text>
             </View>
         );
@@ -76,19 +70,24 @@ const components = {
 
     SignIn: {
         Header() {
-            const { tokens } = useTheme();
+            const {tokens} = useTheme();
+            const {t} = useTranslation();
 
             return (
                 <Heading
-                    padding={`${tokens.space.xl} 0 0 ${tokens.space.xl}`}
+                    padding=""
                     level={3}
+                    textAlign= "center"
+                    fontSize= "1.5rem"
+                    color= "#943288"
                 >
-                    Sign in to your account
+                    {t('sign_in_header')}
                 </Heading>
             );
         },
         Footer() {
-            const { toForgotPassword } = useAuthenticator();
+            const {toForgotPassword} = useAuthenticator();
+            const {t} = useTranslation();
 
             return (
                 <View textAlign="center">
@@ -98,7 +97,7 @@ const components = {
                         size="small"
                         variation="link"
                     >
-                        Reset Password
+                        {t('reset_password')}
                     </Button>
                 </View>
             );
@@ -107,19 +106,24 @@ const components = {
 
     SignUp: {
         Header() {
-            const { tokens } = useTheme();
+            const {tokens} = useTheme();
+            const {t} = useTranslation();
 
             return (
                 <Heading
-                    padding={`${tokens.space.xl} 0 0 ${tokens.space.xl}`}
+                    padding=""
                     level={3}
+                    textAlign= "center"
+                    fontSize= "1.5rem"
+                    color= "#943288"
                 >
-                    Create a new account
+                    {t('create_account')}
                 </Heading>
             );
         },
         Footer() {
-            const { toSignIn } = useAuthenticator();
+            const {toSignIn} = useAuthenticator();
+            const {t} = useTranslation();
 
             return (
                 <View textAlign="center">
@@ -129,7 +133,7 @@ const components = {
                         size="small"
                         variation="link"
                     >
-                        Back to Sign In
+                        {t('back_to_sign_in')}
                     </Button>
                 </View>
             );
@@ -137,146 +141,198 @@ const components = {
     },
     ConfirmSignUp: {
         Header() {
-            const { tokens } = useTheme();
+            const {tokens} = useTheme();
+            const {t} = useTranslation();
+
             return (
                 <Heading
-                    padding={`${tokens.space.xl} 0 0 ${tokens.space.xl}`}
+                    padding=""
                     level={3}
+                    textAlign= "center"
+                    fontSize= "1.5rem"
+                    color= "#943288"
                 >
-                    Enter Information:
+                    {t('information')}
                 </Heading>
             );
         },
         Footer() {
-            return <Text>Footer Information</Text>;
+            const {t} = useTranslation();
+
+            return <Text>{t('footer_information')}</Text>;
         },
     },
     SetupTotp: {
         Header() {
-            const { tokens } = useTheme();
+            const {tokens} = useTheme();
+            const {t} = useTranslation();
+
             return (
                 <Heading
-                    padding={`${tokens.space.xl} 0 0 ${tokens.space.xl}`}
+                    padding=""
                     level={3}
+                    textAlign= "center"
+                    fontSize= "1.5rem"
+                    color= "#943288"
                 >
-                    Enter Information:
+                    {t('information')}
                 </Heading>
             );
         },
         Footer() {
-            return <Text>Footer Information</Text>;
+            const {t} = useTranslation();
+
+            return <Text>{t('footer_information')}</Text>;
         },
     },
     ConfirmSignIn: {
         Header() {
-            const { tokens } = useTheme();
+            const {tokens} = useTheme();
+            const {t} = useTranslation();
             return (
                 <Heading
-                    padding={`${tokens.space.xl} 0 0 ${tokens.space.xl}`}
+                    padding=""
                     level={3}
+                    textAlign= "center"
+                    fontSize= "1.5rem"
+                    color= "#943288"
                 >
-                    Enter Information:
+                    {t('information')}
                 </Heading>
             );
         },
         Footer() {
-            return <Text>Footer Information</Text>;
+            const {t} = useTranslation();
+
+            return <Text>{t('footer_information')}</Text>;
         },
     },
     ForgotPassword: {
         Header() {
-            const { tokens } = useTheme();
+            const {tokens} = useTheme();
+            const {t} = useTranslation();
+
             return (
                 <Heading
-                    padding={`${tokens.space.xl} 0 0 ${tokens.space.xl}`}
+                    padding=""
                     level={3}
+                    textAlign= "center"
+                    fontSize= "1.5rem"
+                    color= "#943288"
                 >
-                    Enter Information:
+                    {t('information')}
                 </Heading>
             );
         },
         Footer() {
-            return <Text>Footer Information</Text>;
+            const {t} = useTranslation();
+
+            return <Text>{t('footer_information')}</Text>;
         },
     },
     ConfirmResetPassword: {
         Header() {
-            const { tokens } = useTheme();
+            const {tokens} = useTheme();
+            const {t} = useTranslation();
+
             return (
                 <Heading
-                    padding={`${tokens.space.xl} 0 0 ${tokens.space.xl}`}
+                    padding=""
                     level={3}
+                    textAlign= "center"
+                    fontSize= "1.5rem"
+                    color= "#943288"
                 >
-                    Enter Information:
+                    {t('information')}
                 </Heading>
             );
         },
         Footer() {
-            return <Text>Footer Information</Text>;
+            const {t} = useTranslation();
+
+            return <Text>{t('footer_information')}</Text>;
         },
     },
 };
 
 
 // Define your custom form fields
-const formFields = {
-    signIn: {
-        username: {
-            placeholder: 'Enter your email',
-        },
-    },
-    signUp: {
-        password: {
-            label: 'Password:',
-            placeholder: 'Enter your Password:',
-            isRequired: false,
-            order: 2,
-        },
-        confirm_password: {
-            label: 'Confirm Password:',
-            order: 1,
-        },
-    },
-    forceNewPassword: {
-        password: {
-            placeholder: 'Enter your Password:',
-        },
-    },
-    forgotPassword: {
-        username: {
-            placeholder: 'Enter your email:',
-        },
-    },
-    confirmResetPassword: {
-        confirmation_code: {
-            placeholder: 'Enter your Confirmation Code:',
-            label: 'New Label',
-            isRequired: false,
-        },
-        confirm_password: {
-            placeholder: 'Enter your Password Please:',
-        },
-    },
-    setupTotp: {
-        QR: {
-            totpIssuer: 'test issuer',
-            totpUsername: 'amplify_qr_test_user',
-        },
-        confirmation_code: {
-            label: 'New Label',
-            placeholder: 'Enter your Confirmation Code:',
-            isRequired: false,
-        },
-    },
-    confirmSignIn: {
-        confirmation_code: {
-            label: 'New Label',
-            placeholder: 'Enter your Confirmation Code:',
-            isRequired: false,
-        },
-    },
-};
+const useTranslatedFormFields = () => {
+    const { t } = useTranslation();
 
+    return {
+        signIn: {
+            username: {
+                label: t('sign_in_username'),
+                placeholder: t('sign_in_placeholder'),
+            },
+            password: {
+                label: t('sign_up_password'),
+                placeholder: t('sign_up_password'),
+                isRequired: true,
+            },
+        },
+        signUp: {
+            email: {
+                label: t('sign_in_username'),
+                placeholder: t('sign_in_placeholder'),
+                order: 1,
+            },
+            password: {
+                label: t('sign_up_password'),
+                placeholder: t('sign_up_password'),
+                isRequired: false,
+                order: 2,
+            },
+            confirm_password: {
+                label: t('confirm_password'),
+                placeholder: t('sign_up_password'),
+                order: 3,
+            },
+        },
+        forceNewPassword: {
+            password: {
+                label: t('sign_up_password'),
+                placeholder: t('sign_up_password'),
+            },
+        },
+        forgotPassword: {
+            username: {
+                label: t('sign_in_username'),
+                placeholder: t('sign_in_placeholder'),
+            },
+        },
+        confirmResetPassword: {
+            confirmation_code: {
+                label: t('confirmation_code'),
+                placeholder: t('confirmation_code_placeholder'),
+                isRequired: false,
+            },
+            confirm_password: {
+                label: t('confirm_password'),
+                placeholder: t('sign_up_password'),
+            },
+        },
+        setupTotp: {
+            QR: {
+                totpIssuer: t('test_issuer'),
+                totpUsername: t('totp_username'),
+            },
+            confirmation_code: {
+                label: t('confirmation_code'),
+                placeholder: t('confirmation_code_placeholder'),
+                isRequired: false,
+            },
+        },
+        confirmSignIn: {
+            confirmation_code: {
+                label: t('confirmation_code'),
+                placeholder: t('confirmation_code_placeholder'),
+                isRequired: false,
+            },
+        },
+    };
+};
 
 // Define your theme
 const theme: Theme = {
@@ -299,6 +355,7 @@ const theme: Theme = {
                     backgroundColor: 'darkblue',
                     borderColor: 'black',
                     borderWidth: '0.5px',
+                    borderStyle: 'solid',
                     color: 'white',
                     _hover: {
                         backgroundColor: '#943288',
@@ -331,29 +388,31 @@ const theme: Theme = {
     },
 };
 
-const root = ReactDOM.createRoot(
-    document.getElementById('root') as HTMLElement
-);
+const App = () => {
+    const formFields = useTranslatedFormFields();
+
+    return (
+        <Suspense fallback="...is loading">
+            <Authenticator.Provider>
+                <ThemeProvider theme={theme}>
+                    <Authenticator formFields={formFields} components={components} signUpAttributes={['email']} className="authenticatorContainer">
+                        {({ signOut, user }) => (
+                            <View>
+                                <RouterProvider router={router} />
+                            </View>
+                        )}
+                    </Authenticator>
+                </ThemeProvider>
+            </Authenticator.Provider>
+        </Suspense>
+    );
+};
+
+const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 
 root.render(
     <React.StrictMode>
-        <Authenticator.Provider>
-            <ThemeProvider theme={theme}>
-            <Authenticator
-                formFields={formFields}
-                components={components}
-                signUpAttributes={['email']}
-                className="authenticatorContainer"
-            >
-                {({signOut, user}) => (
-                    <View>
-                        <RouterProvider router={router}/>
-                    </View>
-                )}
-
-            </Authenticator>
-        </ThemeProvider>
-        </Authenticator.Provider>
+        <App />
     </React.StrictMode>
 );
 

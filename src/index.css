@@ -18,3 +18,21 @@ code {
   margin-top: 3.5rem;
   padding-bottom: 1.5rem;
 }
+
+.styledButton {
+  background-color: darkblue;
+  color: white;
+  padding: 10px 20px;
+  border: 0.5px solid black;
+  border-radius: 4px;
+  cursor: pointer;
+  &:hover {
+    background-color: #943288;
+    color: white;
+  };
+}
+
+.signInHeader {
+
+  text-shadow: 0 0 10px #943288;
+}

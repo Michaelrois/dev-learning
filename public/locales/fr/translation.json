@@ -1,0 +1,19 @@
+{
+  "dev_learning": "Apprentissage de développement",
+  "auth_footer": "Tous droits réservés 2024",
+  "sign_in_header": "Connectez-vous à votre compte",
+  "reset_password": "Réinitialiser le mot de passe",
+  "create_account": "Créer un nouveau compte",
+  "back_to_sign_in": "Retour à la connexion",
+  "information": "Entrez vos Informations :",
+  "footer_information": "Information du pied de page",
+  "sign_in_username": "Nom d'utilisateur :",
+  "sign_in_placeholder": "Entrez votre email",
+  "sign_up_password": "Mot de passe:",
+  "sign_up_placeholder": "Entrez votre mot de passe",
+  "confirm_password": "Confirmer le mot de passe:",
+  "confirmation_code": "Code de confirmation :",
+  "confirmation_code_placeholder": "Entrez votre code de confirmation",
+  "test_issuer": "Test de titre",
+  "totp_username": "amplifyt_qr_test_user"
+}
