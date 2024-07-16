@@ -82,8 +82,10 @@ code {
 .vertical-nav {
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
+  width: 15%;
+  overflow-y: scroll;
   white-space: nowrap;
+  padding-top: 5px;
 
 }
 

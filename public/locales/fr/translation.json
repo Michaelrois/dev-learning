@@ -21,5 +21,20 @@
   "home_title": "Bienvenue sur mon application web d'apprentissage",
   "body_text": "Ici, vous trouverez toutes les notions informatiques en développement d'application Web que je connaisses et auxquelles vous pouvez vous référer en tout temps afin de vous perfectionner dans certains domaines et si connaissez d'autres notions qui selon vous devraient y être ajouter, veuillez me contacter et j'étudirai vos propositions.",
   "html_title": "Leçons HTML",
-  "html_basics": "Les bases de HTML"
+  "html_basics": "Les bases du HTML",
+  "html_forms": "Les formulaires HTML",
+  "css_basics": "Les bases de CSS",
+  "css_basics2": "Les bases de CSS 2",
+  "css_basics3": "Les bases de CSS 3",
+  "flex_elements": "Les éléments flex",
+  "html_responsive": "Site Web Responsive",
+  "advanced_css": "CSS avancé",
+  "iframe": "Les iframe",
+  "html_symbols": "Les symboles HTML",
+  "html_emojis": "Les emojis HTML",
+  "html_favicon": "Les favicon HTML",
+  "html_media": "Les medias HTML",
+  "html_audio": "Les audios HTML",
+  "html_video": "Les vidéos HTML",
+  "html_plugins": "Les plugins HTML"
 }

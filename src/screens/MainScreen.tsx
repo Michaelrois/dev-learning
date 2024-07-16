@@ -2,8 +2,9 @@ import React from 'react';
 import {Amplify} from "aws-amplify";
 import awsConfig from "../amplifyconfiguration.json";
 import {useTranslation} from 'react-i18next';
-//import '../i18n';
 import styled from "styled-components";
+import HorizontalNavBar from "../components/HorizontalNavBar";
+import Footer from "../components/Footer";
 
 Amplify.configure(awsConfig);
 
@@ -29,6 +30,8 @@ const BodyText = styled.p`
 export default function MainScreen() {
     const {t} = useTranslation();
     return (
+        <>
+        <HorizontalNavBar />
         <div
             style={{
                 display: 'flex',
@@ -49,5 +52,7 @@ export default function MainScreen() {
                 <img className="quotes" src='/images/RightQuotes.svg' alt="right quotes" title="right quotes"/>
             </BodyText>
         </div>
+        <Footer />
+        </>
     );
 }

@@ -8,9 +8,9 @@ import styled from 'styled-components';
 import {useTranslation, Trans} from 'react-i18next';
 import '@aws-amplify/ui-react/styles.css';
 import {Suspense} from 'react';
-import HorizontalNavBar  from "./components/HorizontalNavBar";
 import MainScreen from './screens/MainScreen';
 import Html from './screens/Html';
+import HtmlBasics from './iframes/HtmlBasics';
 import {
     Authenticator,
     ThemeProvider,
@@ -37,6 +37,10 @@ const router = createBrowserRouter([
         path: '/Html',
         element: <Html/>,
     },
+    {
+        path: '/HtmlBasics',
+        element: <HtmlBasics/>,
+    },
 ]);
 
 // Styled Components
@@ -45,14 +49,6 @@ const AuthenticatorTitle = styled.h1`
     text-shadow: 0 3px 2px darkblue;
 `;
 
-const FooterElement = styled.div`
-    text-align: center;
-    padding-top: 1.5rem;
-    font-size: 0.8rem;
-    color: darkblue;
-    text-shadow: 1px 1px 2px #943288;
-    font-style: italic;
-`;
 
 // Define your custom components
 const components = {
@@ -413,12 +409,10 @@ const App = () => {
                 <ThemeProvider theme={theme}>
                     <Authenticator formFields={formFields} components={components} signUpAttributes={['email']} className="authenticatorContainer">
                         {({ signOut, user }) => (
-                            <View>
-                                <HorizontalNavBar />
+                            <View
+                            style={{height: '100vh'}}
+                            >
                                 <RouterProvider router={router} />
-                                <FooterElement>
-                                    <p>{t('footer_information')}</p>
-                                </FooterElement>
                             </View>
                         )}
                     </Authenticator>

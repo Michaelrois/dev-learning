@@ -21,5 +21,20 @@
   "home_title": "Welcome to my learning web app",
   "body_text": "Here, you will find all the IT concepts in web application development that I know and to which you can refer at any time in order to improve yourself in certain areas and if you know other concepts which you think should be added, please me contact me and I will study your proposals.",
   "html_title": "HTML Lessons",
-  "html_basics": "The basics of Html"
+  "html_basics": "The basics of Html",
+  "html_forms": "The html forms",
+  "css_basics": "The basics of Css",
+  "css_basics2": "The basics of Css 2",
+  "css_basics3": "The basics of Css 3",
+  "flex_elements": "Theflex elements",
+  "html_responsive": "Responsive web design",
+  "advanced_css": "Advanced css",
+  "iframe": "The iframe",
+  "html_symbols": "The Html symbols",
+  "html_emojis": "The Html emojis",
+  "html_favicon": "The html favicon",
+  "html_media": "The html media",
+  "html_audio": "The html audio",
+  "html_video": "The html video",
+  "html_plugins": "The html plugins"
 }
