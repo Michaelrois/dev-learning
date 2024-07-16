@@ -32,7 +32,48 @@ code {
   };
 }
 
+.navBarButton {
+  background-color: darkblue;
+  color: white;
+  /*padding: 10px 20px;*/
+  border: 1px solid black;
+  border-radius: 10px;
+  cursor: pointer;
+  &:hover {
+    background-color: #943288;
+    color: white;
+  };
+}
+
+/*
 .signInHeader {
 
   text-shadow: 0 0 10px #943288;
+}*/
+
+.horizontal-nav {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  background-color: darkblue;
+  padding: 10px 0;
+  scrollbar-width: none; /* Hide scrollbar in Firefox */
+}
+
+.nav-item {
+  display: inline-block;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-item:hover {
+  color: #943288;
+}
+
+.nav-item.active {
+  color: #943288;
 }

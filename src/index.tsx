@@ -8,7 +8,9 @@ import styled from 'styled-components';
 import {useTranslation, Trans} from 'react-i18next';
 import '@aws-amplify/ui-react/styles.css';
 import {Suspense} from 'react';
+import HorizontalNavBar  from "./components/HorizontalNavBar";
 import MainScreen from './screens/MainScreen';
+import Html from './screens/Html';
 import {
     Authenticator,
     ThemeProvider,
@@ -30,6 +32,10 @@ const router = createBrowserRouter([
     {
         path: '/',
         element: <MainScreen/>,
+    },
+    {
+        path: '/Html',
+        element: <Html/>,
     },
 ]);
 
@@ -398,6 +404,7 @@ const App = () => {
                     <Authenticator formFields={formFields} components={components} signUpAttributes={['email']} className="authenticatorContainer">
                         {({ signOut, user }) => (
                             <View>
+                                <HorizontalNavBar />
                                 <RouterProvider router={router} />
                             </View>
                         )}

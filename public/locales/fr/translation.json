@@ -15,5 +15,8 @@
   "confirmation_code": "Code de confirmation :",
   "confirmation_code_placeholder": "Entrez votre code de confirmation",
   "test_issuer": "Test de titre",
-  "totp_username": "amplifyt_qr_test_user"
+  "totp_username": "amplifyt_qr_test_user",
+  "home": "Accueil",
+  "help": "Aide",
+  "home_title": "Bienvenue sur mon application web d'apprentissage"
 }

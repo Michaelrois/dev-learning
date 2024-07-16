@@ -14,7 +14,7 @@ export default function SignOutComponent() {
         <div>
             <button
                 onClick={handleSignOut}
-                className="styledButton"
+                className="navBarButton"
             >Sign Out</button>
         </div>
     )
