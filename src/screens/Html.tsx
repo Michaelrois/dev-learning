@@ -31,7 +31,7 @@ const BodyContainer = styled.div`
 
 const Iframe = styled.iframe`
     width: 85%;
-    overflow-y: auto;
+    overflow-y: scroll;
     border: none;
 `;
 
@@ -42,12 +42,8 @@ export default function Html() {
     const navItems = [
         {label: t('html_basics'), link: "/HtmlBasics", target: "iframe_content"},
         {label: t('html_forms'), link: "", target: "iframe_content"},
-        {label: t('css_basics'), link: "", target: "iframe_content"},
-        {label: t('css_basics2'), link: "", target: "iframe_content"},
-        {label: t('css_basics3'), link: "", target: "iframe_content"},
         {label: t('flex_elements'), link: "", target: "iframe_content"},
         {label: t('html_responsive'), link: "", target: "iframe_content"},
-        {label: t('advanced_css'), link: "", target: "iframe_content"},
         {label: t('iframe'), link: "", target: "iframe_content"},
         {label: t('html_symbols'), link: "", target: "iframe_content"},
         {label: t('html_emojis'), link: "", target: "iframe_content"},
