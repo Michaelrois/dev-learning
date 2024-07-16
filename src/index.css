@@ -51,13 +51,13 @@ code {
   text-shadow: 0 0 10px #943288;
 }*/
 
+/* Horizontal navigation bar styles */
 .horizontal-nav {
   display: flex;
   overflow-x: auto;
   white-space: nowrap;
   background-color: darkblue;
   padding: 10px 0;
-  scrollbar-width: none; /* Hide scrollbar in Firefox */
 }
 
 .nav-item {
@@ -74,6 +74,36 @@ code {
   color: #943288;
 }
 
-.nav-item.active {
+.active {
   color: #943288;
+}
+
+/* Vertical navigation bar styles */
+.vertical-nav {
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  white-space: nowrap;
+
+}
+
+.vertical-nav-item {
+  display: inline-block;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  color: darkblue;
+}
+
+.vertical-nav-item:hover {
+  color: #943288;
+}
+
+
+/* Quotes styles */
+.quotes {
+  width: 50px;
+  height: 20px;
 }

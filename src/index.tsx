@@ -45,6 +45,15 @@ const AuthenticatorTitle = styled.h1`
     text-shadow: 0 3px 2px darkblue;
 `;
 
+const FooterElement = styled.div`
+    text-align: center;
+    padding-top: 1.5rem;
+    font-size: 0.8rem;
+    color: darkblue;
+    text-shadow: 1px 1px 2px #943288;
+    font-style: italic;
+`;
+
 // Define your custom components
 const components = {
     Header() {
@@ -68,7 +77,7 @@ const components = {
         return (
             <View textAlign="center" padding={tokens.space.large}>
                 <Text color="#943288" fontSize="12px" fontWeight="bolder" fontStyle="italic">
-                    Michael Sirois &copy; {t('auth_footer')}
+                    {t('footer_information')}
                 </Text>
             </View>
         );
@@ -396,6 +405,7 @@ const theme: Theme = {
 
 const App = () => {
     const formFields = useTranslatedFormFields();
+    const {t} = useTranslation();
 
     return (
         <Suspense fallback="...is loading">
@@ -406,6 +416,9 @@ const App = () => {
                             <View>
                                 <HorizontalNavBar />
                                 <RouterProvider router={router} />
+                                <FooterElement>
+                                    <p>{t('footer_information')}</p>
+                                </FooterElement>
                             </View>
                         )}
                     </Authenticator>

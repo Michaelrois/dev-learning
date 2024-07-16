@@ -1,7 +1,7 @@
 import React from 'react';
 import '../index.css'
 import {useTranslation} from 'react-i18next';
-import '../i18n';
+//import '../i18n';
 
 const HorizontalNavBar = () => {
     const {t} = useTranslation();

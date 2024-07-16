@@ -1,12 +1,12 @@
 {
   "dev_learning": "Development learning",
-  "auth_footer": "All Rights Reserved 2024",
+  "auth_footer": "",
   "sign_in_header": "Sign in to your account",
   "reset_password": "Reset Password",
   "create_account": "Create a new account",
   "back_to_sign_in": "Back to Sign In",
   "information": "Enter Information:",
-  "footer_information": "Footer Information",
+  "footer_information": "Michael Sirois © All Rights Reserved 2024",
   "sign_in_username": "Username:",
   "sign_in_placeholder": "Enter your email",
   "sign_up_password": "Password:",
@@ -18,5 +18,8 @@
   "totp_username": "amplifyt_qr_test_user",
   "home": "Home",
   "help": "Help",
-  "home_title": "Welcome to my learning web app"
+  "home_title": "Welcome to my learning web app",
+  "body_text": "Here, you will find all the IT concepts in web application development that I know and to which you can refer at any time in order to improve yourself in certain areas and if you know other concepts which you think should be added, please me contact me and I will study your proposals.",
+  "html_title": "HTML Lessons",
+  "html_basics": "The basics of Html"
 }
