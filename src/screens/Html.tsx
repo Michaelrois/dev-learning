@@ -5,7 +5,6 @@ import VerticalNavBar from "../components/VerticalNavBar";
 import HorizontalNavBar from "../components/HorizontalNavBar";
 import Footer from "../components/Footer";
 
-
 //Styled Components
 const HtmlContainer = styled.div`
     display: flex;
@@ -36,11 +35,13 @@ const Iframe = styled.iframe`
 `;
 
 
-export default function Html() {
+export const Html: React.FC =  () => {
     const {t} = useTranslation();
     //Data
     const navItems = [
         {label: t('html_basics'), link: "/HtmlBasics", target: "iframe_content"},
+        {label: t('html_tables'), link: "", target: "iframe_content"},
+        {label: t('html_lists'), link: "", target: "iframe_content"},
         {label: t('html_forms'), link: "", target: "iframe_content"},
         {label: t('flex_elements'), link: "", target: "iframe_content"},
         {label: t('html_responsive'), link: "", target: "iframe_content"},
@@ -66,12 +67,12 @@ export default function Html() {
 
                 <BodyContainer>
                     <VerticalNavBar items={navItems}/>
-                    <Iframe
-                        name="iframe_content"
-                    ></Iframe>
+                    <Iframe name="iframe_content" src="/defaultHtml">
+                    </Iframe>
                 </BodyContainer>
             </HtmlContainer>
             <Footer/>
         </div>
     );
 };
+

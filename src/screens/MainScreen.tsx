@@ -27,32 +27,32 @@ const BodyText = styled.p`
 `;
 
 
-export default function MainScreen() {
+export const MainScreen: React.FC = () => {
     const {t} = useTranslation();
     return (
         <>
-        <HorizontalNavBar />
-        <div
-            style={{
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                height: '85vh',
-                paddingTop: '8rem',
+            <HorizontalNavBar/>
+            <div
+                style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    alignItems: 'center',
+                    height: '85vh',
+                    paddingTop: '8rem',
 
-            }}
-        >
-            <HomeTitle>
-                {t('home_title')}
-            </HomeTitle>
+                }}
+            >
+                <HomeTitle>
+                    {t('home_title')}
+                </HomeTitle>
 
-            <BodyText>
-                <img className="quotes" src='/images/LeftQuotes.svg' alt="left quotes" title="left quotes"/>
-                {t('body_text')}
-                <img className="quotes" src='/images/RightQuotes.svg' alt="right quotes" title="right quotes"/>
-            </BodyText>
-        </div>
-        <Footer />
+                <BodyText>
+                    <img className="quotes" src='/images/LeftQuotes.svg' alt="left quotes" title="left quotes"/>
+                    {t('body_text')}
+                    <img className="quotes" src='/images/RightQuotes.svg' alt="right quotes" title="right quotes"/>
+                </BodyText>
+            </div>
+            <Footer/>
         </>
     );
-}
+};

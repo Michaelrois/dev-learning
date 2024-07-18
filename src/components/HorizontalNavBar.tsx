@@ -1,10 +1,25 @@
 import React from 'react';
 import '../index.css'
+import styled from "styled-components";
+import {signOut} from "aws-amplify/auth";
 import {useTranslation} from 'react-i18next';
-//import '../i18n';
+
+const SignOutButton = styled.button`
+    color: white;
+    border: none;
+    cursor: pointer;
+`;
 
 const HorizontalNavBar = () => {
     const {t} = useTranslation();
+
+    const handleSignOut = async () => {
+        try {
+            await signOut();
+        } catch (error) {
+            console.log('error signing out: ', error);
+        }
+    };
 
     const items = [
         {label: t('home'), link: "/"},
@@ -28,6 +43,16 @@ const HorizontalNavBar = () => {
                     {item.label}
                 </a>
             ))}
+            <button
+                className="nav-item"
+                onClick={handleSignOut}
+                style={{
+                    border: 'none',
+                    backgroundColor: 'transparent',
+                }}
+            >
+                {t('sign_out')}
+            </button>
         </div>
     );
 };

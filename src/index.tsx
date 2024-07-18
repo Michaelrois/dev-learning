@@ -5,12 +5,14 @@ import reportWebVitals from './reportWebVitals';
 import {Amplify} from 'aws-amplify';
 import awsExports from './aws-exports';
 import styled from 'styled-components';
-import {useTranslation, Trans} from 'react-i18next';
+import {useTranslation} from 'react-i18next';
 import '@aws-amplify/ui-react/styles.css';
 import {Suspense} from 'react';
-import MainScreen from './screens/MainScreen';
-import Html from './screens/Html';
-import HtmlBasics from './iframes/HtmlBasics';
+import {MainScreen} from './screens/MainScreen';
+import {Html} from './screens/Html';
+import {DefaultHtml} from "./iframes/html/DefaultHtml";
+import {HtmlBasics} from './iframes/html/HtmlBasics';
+import {Page} from './iframes/html/Page';
 import {
     Authenticator,
     ThemeProvider,
@@ -27,6 +29,7 @@ import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 import './i18n';
 
 Amplify.configure(awsExports);
+
 // Define your routes
 const router = createBrowserRouter([
     {
@@ -38,9 +41,17 @@ const router = createBrowserRouter([
         element: <Html/>,
     },
     {
+        path: '/defaultHtml',
+        element: <DefaultHtml/>,
+    },
+    {
         path: '/HtmlBasics',
         element: <HtmlBasics/>,
     },
+    {
+        path: '/Page',
+        element: <Page/>,
+    }
 ]);
 
 // Styled Components
@@ -81,7 +92,6 @@ const components = {
 
     SignIn: {
         Header() {
-            const {tokens} = useTheme();
             const {t} = useTranslation();
 
             return (
@@ -117,7 +127,6 @@ const components = {
 
     SignUp: {
         Header() {
-            const {tokens} = useTheme();
             const {t} = useTranslation();
 
             return (
@@ -152,7 +161,6 @@ const components = {
     },
     ConfirmSignUp: {
         Header() {
-            const {tokens} = useTheme();
             const {t} = useTranslation();
 
             return (
@@ -175,7 +183,6 @@ const components = {
     },
     SetupTotp: {
         Header() {
-            const {tokens} = useTheme();
             const {t} = useTranslation();
 
             return (
@@ -198,7 +205,6 @@ const components = {
     },
     ConfirmSignIn: {
         Header() {
-            const {tokens} = useTheme();
             const {t} = useTranslation();
             return (
                 <Heading
@@ -220,7 +226,6 @@ const components = {
     },
     ForgotPassword: {
         Header() {
-            const {tokens} = useTheme();
             const {t} = useTranslation();
 
             return (
@@ -243,7 +248,6 @@ const components = {
     },
     ConfirmResetPassword: {
         Header() {
-            const {tokens} = useTheme();
             const {t} = useTranslation();
 
             return (
@@ -401,7 +405,6 @@ const theme: Theme = {
 
 const App = () => {
     const formFields = useTranslatedFormFields();
-    const {t} = useTranslation();
 
     return (
         <Suspense fallback="...is loading">

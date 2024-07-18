@@ -1,6 +1,7 @@
 import React from 'react';
 import {useTranslation} from "react-i18next";
 import styled from "styled-components";
+import {IframeNavBar} from "../../components/IframeNavBar";
 
 //Styled Components
 const Title = styled.h1`
@@ -81,14 +82,18 @@ const ExampleResult = styled.p`
 `;
 
 const Section = styled.section`
-    width: 50%;
+    width: 60%;
     height: 100px;
     border-bottom: 3px solid darkblue;
     margin-bottom: 30px;
 `;
 
-export default function HtmlBasics() {
+export const HtmlBasics: React.FC = () => {
     const {t} = useTranslation();
+
+    const navItems = [
+        {label: t('html_basics_title'), link: "/HtmlBasics", target: "iframe_content"},
+    ]
 
     return (
         <div
@@ -97,8 +102,12 @@ export default function HtmlBasics() {
                 flexDirection: 'column'
             }}
         >
-            {/* Pricipal Title */}
+            {/* Principal Title */}
             <Title>{t('html_basics')}</Title>
+
+            {/* Iframe navigation bar */}
+            <IframeNavBar items={navItems} />
+
             {/*First section - The title*/}
             <section>
                 <SubTitle>{t('html_the_title')}</SubTitle>
@@ -285,6 +294,53 @@ export default function HtmlBasics() {
                 <SubTitle>{t('html_the_link_element')}</SubTitle>
                 <TextContainer>
                     <p>{t('html_the_link_element_text')}</p>
+                    <ExampleTitle>{t('example')}</ExampleTitle>
+                    <Container>
+                        {/* Link to a website section */}
+                        <Section>
+                            <ExampleContainer>
+                                <ExampleSubTitle>{t('to_website')}</ExampleSubTitle>
+                                <ExampleCode>&lt;a href="https://www.google.com"&gt;Google&lt;/a&gt;</ExampleCode>
+                            </ExampleContainer>
+                            <ResultContainer>
+                                <ExampleSubTitle>{t('result_example')}</ExampleSubTitle>
+                                <ExampleResult
+                                    style={{top: '13px'}}
+                                >
+                                    <a href="https://www.google.com">Google</a>
+                                </ExampleResult>
+                            </ResultContainer>
+                        </Section>
+                        {/* Link to another page section */}
+                        <Section>
+                            <ExampleContainer>
+                                <ExampleSubTitle>{t('to_web_page')}</ExampleSubTitle>
+                                <ExampleCode>&lt;a href="/Page"&gt;Page&lt;/a&gt;</ExampleCode>
+                            </ExampleContainer>
+                            <ResultContainer>
+                                <ExampleSubTitle>{t('result_example')}</ExampleSubTitle>
+                                <ExampleResult
+                                    style={{top: '13px'}}
+                                >
+                                    <a href="/Page">Page</a>
+                                </ExampleResult>
+                            </ResultContainer>
+                        </Section>
+                        <Section>
+                            <ExampleContainer>
+                                <ExampleSubTitle>{t('html_the_link_#_title')}</ExampleSubTitle>
+                                <ExampleCode>&lt;a href="#" title="{t('go_top')}"&gt;{t('go_top')}&lt;/a&gt;</ExampleCode>
+                            </ExampleContainer>
+                            <ResultContainer>
+                                <ExampleSubTitle>{t('result_example')}</ExampleSubTitle>
+                                <ExampleResult
+                                    style={{top: '13px'}}
+                                >
+                                    <a href="#" title="Go to top">Go to top</a>
+                                </ExampleResult>
+                            </ResultContainer>
+                        </Section>
+                    </Container>
                 </TextContainer>
             </section>
         </div>

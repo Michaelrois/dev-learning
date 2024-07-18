@@ -7,11 +7,12 @@ interface NavItem {
     target: string;
 }
 
-interface HorizontalNavBarProps {
+interface VerticalNavBarProps {
     items: NavItem[];
 }
 
-const VerticalNavBar: React.FC<HorizontalNavBarProps> = ({ items }) => {
+const VerticalNavBar: React.FC<VerticalNavBarProps> = ({ items }) => {
+
     return (
         <div className="vertical-nav">
             {items.map((item, index) => (
