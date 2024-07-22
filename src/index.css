@@ -103,6 +103,41 @@ code {
   color: #943288;
 }
 
+/*Iframe Navigation styles*/
+.nav-iframe {
+  display: inline-block;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  text-decoration: none;
+  text-shadow: 1px 1px 3px #943288;
+  color: darkblue;
+}
+
+.nav-iframe:hover {
+  color: #943288;
+}
+
+.double-border {
+  position: relative;
+  padding: 10px;
+  background-color: white;
+  border-top: 1px solid #943288; /* Inner border color */
+  border-bottom: 1px solid #943288; /* Inner border color */
+}
+
+.double-border::before {
+  content: "";
+  position: absolute;
+  top: -10px; /* Adjust the value based on your border width */
+  left: 0;
+  right: 0;
+  bottom: -10px;
+  border-top: 1px solid darkblue; /* Outer border color */
+  border-bottom: 1px solid darkblue; /* Outer border color */
+  z-index: -1; /* Place the outer border behind the element */
+}
 
 /* Quotes styles */
 .quotes {

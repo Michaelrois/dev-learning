@@ -13,6 +13,8 @@ import {Html} from './screens/Html';
 import {DefaultHtml} from "./iframes/html/DefaultHtml";
 import {HtmlBasics} from './iframes/html/HtmlBasics';
 import {Page} from './iframes/html/Page';
+import {Tables} from './iframes/html/Tables';
+import {Lists} from './iframes/html/Lists';
 import {
     Authenticator,
     ThemeProvider,
@@ -51,6 +53,14 @@ const router = createBrowserRouter([
     {
         path: '/Page',
         element: <Page/>,
+    },
+    {
+        path: '/Tables',
+        element: <Tables/>,
+    },
+    {
+        path: '/Lists',
+        element: <Lists/>,
     }
 ]);
 

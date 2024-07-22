@@ -40,8 +40,8 @@ export const Html: React.FC =  () => {
     //Data
     const navItems = [
         {label: t('html_basics'), link: "/HtmlBasics", target: "iframe_content"},
-        {label: t('html_tables'), link: "", target: "iframe_content"},
-        {label: t('html_lists'), link: "", target: "iframe_content"},
+        {label: t('html_tables'), link: "/Tables", target: "iframe_content"},
+        {label: t('html_lists'), link: "/Lists", target: "iframe_content"},
         {label: t('html_forms'), link: "", target: "iframe_content"},
         {label: t('flex_elements'), link: "", target: "iframe_content"},
         {label: t('html_responsive'), link: "", target: "iframe_content"},

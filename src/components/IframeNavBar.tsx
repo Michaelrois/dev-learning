@@ -1,32 +1,34 @@
 import React from 'react';
 import styled from "styled-components";
+import "../index.css";
 
 //Styled Components
 const NavBarContainer = styled.div`
     width: 70%;
     margin: 0 auto;
+    text-align: center;
+    
 `;
 
-interface NavItem {
+interface NavItems {
     label: string;
     link: string;
 }
 
 interface HorizontalNavBarProps {
-    items: NavItem[];
+    items: NavItems[];
 }
 
 
 export const IframeNavBar: React.FC<HorizontalNavBarProps> = ({ items }) => {
 
     return (
-        <NavBarContainer>
+        <NavBarContainer className="double-border">
             {items.map((item, index) => (
                 <a
                     key={index}
                     href={item.link}
-                    className="nav-item"
-                    style={{color: 'darkblue'}}
+                    className="nav-iframe"
                 >
                     {item.label}
                 </a>

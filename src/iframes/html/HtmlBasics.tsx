@@ -83,7 +83,7 @@ const ExampleResult = styled.p`
 
 const Section = styled.section`
     width: 60%;
-    height: 100px;
+    height: 120px;
     border-bottom: 3px solid darkblue;
     margin-bottom: 30px;
 `;
@@ -92,7 +92,10 @@ export const HtmlBasics: React.FC = () => {
     const {t} = useTranslation();
 
     const navItems = [
-        {label: t('html_basics_title'), link: "/HtmlBasics", target: "iframe_content"},
+        {label: t('html_basics_title'), link: "#titles"},
+        {label: t('html_basics_paragraph'), link: "#paragraphs"},
+        {label: t('html_basics_tags'), link: "#tags"},
+        {label: t('html_basics_links'), link: "#links"},
     ]
 
     return (
@@ -110,7 +113,7 @@ export const HtmlBasics: React.FC = () => {
 
             {/*First section - The title*/}
             <section>
-                <SubTitle>{t('html_the_title')}</SubTitle>
+                <SubTitle id='titles'>{t('html_the_title')}</SubTitle>
                 <TextContainer>
                     <p>{t('html_the_title_text')}</p>
                     <ExampleTitle>{t('example')}</ExampleTitle>
@@ -207,7 +210,7 @@ export const HtmlBasics: React.FC = () => {
             </section>
             {/* Second section - The paragraphs*/}
             <section>
-                <SubTitle>{t('html_the_paragraphs')}</SubTitle>
+                <SubTitle id='paragraphs'>{t('html_the_paragraphs')}</SubTitle>
                 <TextContainer>
                     <p>{t('html_the_paragraphs_text')}</p>
                     <ExampleTitle>{t('example')}</ExampleTitle>
@@ -229,7 +232,7 @@ export const HtmlBasics: React.FC = () => {
             </section>
             {/* Third section - The text properties tags*/}
             <section>
-                <SubTitle>{t('html_the_text_properties')}</SubTitle>
+                <SubTitle id='tags'>{t('html_the_text_properties')}</SubTitle>
                 <TextContainer>
                     <p>{t('html_the_text_properties_text')}</p>
                     <ExampleTitle>{t('example')}</ExampleTitle>
@@ -291,7 +294,7 @@ export const HtmlBasics: React.FC = () => {
             </section>
             {/* Fourth section - The link element */}
             <section>
-                <SubTitle>{t('html_the_link_element')}</SubTitle>
+                <SubTitle id='links'>{t('html_the_link_element')}</SubTitle>
                 <TextContainer>
                     <p>{t('html_the_link_element_text')}</p>
                     <ExampleTitle>{t('example')}</ExampleTitle>
